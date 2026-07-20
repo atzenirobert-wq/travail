@@ -3,7 +3,7 @@ import { getCollection, getEntries } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EmailCapture from '../components/EmailCapture.astro';
 import ProductCard from '../components/ProductCard.astro';
-import { SITE } from '../lib/site';
+import { SITE, withBase } from '../lib/site';
 
 const comparatif = (await getCollection('comparatifs')).find(
   (c) => c.id === 'meilleur-climatiseur-mobile',
@@ -21,13 +21,13 @@ const produits = comparatif ? await getEntries(comparatif.data.produits.slice(0,
     </p>
     <div class="mt-8 flex flex-wrap justify-center gap-3">
       <a
-        href="/climatiseur-mobile/"
+        href={withBase('/climatiseur-mobile/')}
         class="rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white no-underline hover:bg-brand-700"
       >
         Lire le guide complet
       </a>
       <a
-        href="/comparatifs/meilleur-climatiseur-mobile/"
+        href={withBase('/comparatifs/meilleur-climatiseur-mobile/')}
         class="rounded-full border border-brand-600 px-6 py-3 text-sm font-semibold text-brand-700 no-underline hover:bg-brand-50"
       >
         Voir le comparatif

@@ -1,17 +1,17 @@
 ---
-import { SITE } from '../lib/site';
+import { SITE, withBase } from '../lib/site';
 ---
 
 <header class="border-b border-slate-200 bg-white/90 backdrop-blur sticky top-0 z-40">
   <div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-    <a href="/" class="flex items-center gap-2 text-xl font-extrabold text-brand-700 no-underline">
+    <a href={withBase('/')} class="flex items-center gap-2 text-xl font-extrabold text-brand-700 no-underline">
       <span aria-hidden="true">❄️</span>
       {SITE.name}
     </a>
     <nav aria-label="Navigation principale" class="hidden gap-6 text-sm font-medium sm:flex">
-      <a href="/climatiseur-mobile/" class="text-slate-700 no-underline hover:text-brand-600">Guide complet</a>
-      <a href="/comparatifs/meilleur-climatiseur-mobile/" class="text-slate-700 no-underline hover:text-brand-600">Comparatif</a>
-      <a href="/comment-on-gagne-de-largent/" class="text-slate-700 no-underline hover:text-brand-600">Notre méthode</a>
+      <a href={withBase('/climatiseur-mobile/')} class="text-slate-700 no-underline hover:text-brand-600">Guide complet</a>
+      <a href={withBase('/comparatifs/meilleur-climatiseur-mobile/')} class="text-slate-700 no-underline hover:text-brand-600">Comparatif</a>
+      <a href={withBase('/comment-on-gagne-de-largent/')} class="text-slate-700 no-underline hover:text-brand-600">Notre méthode</a>
     </nav>
     <a
       href="#newsletter"

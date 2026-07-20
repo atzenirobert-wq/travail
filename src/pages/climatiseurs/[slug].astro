@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import EmailCapture from '../../components/EmailCapture.astro';
 import ProductCard from '../../components/ProductCard.astro';
+import { withBase } from '../../lib/site';
 
 export async function getStaticPaths() {
   const produits = await getCollection('produits');
@@ -21,9 +22,9 @@ const description = `Caractéristiques, avis de la rédaction et liens marchands
 <BaseLayout title={title} description={description}>
   <article class="mx-auto max-w-3xl px-4 py-10">
     <nav aria-label="Fil d'Ariane" class="mb-4 text-xs text-slate-500">
-      <a href="/" class="no-underline hover:underline">Accueil</a>
+      <a href={withBase('/')} class="no-underline hover:underline">Accueil</a>
       <span aria-hidden="true"> / </span>
-      <a href="/comparatifs/meilleur-climatiseur-mobile/" class="no-underline hover:underline">Comparatif</a>
+      <a href={withBase('/comparatifs/meilleur-climatiseur-mobile/')} class="no-underline hover:underline">Comparatif</a>
       <span aria-hidden="true"> / </span>
       <span>{entry.data.marque} {entry.data.nom}</span>
     </nav>

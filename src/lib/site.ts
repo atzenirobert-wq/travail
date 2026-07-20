@@ -1,3 +1,13 @@
+/**
+ * Prefixes an absolute path with Astro's configured `base` (import.meta.env.BASE_URL).
+ * Needed because this site can be deployed under a subpath (e.g. GitHub Pages
+ * project sites at /travail/) as well as at the domain root.
+ */
+export function withBase(path: string): string {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+  return `${base}${path}`;
+}
+
 export const SITE = {
   name: 'TopClim.fr',
   domain: 'https://topclim.fr',

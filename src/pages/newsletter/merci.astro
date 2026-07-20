@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { withBase } from '../../lib/site';
 ---
 
 <BaseLayout title="Merci pour votre inscription" description="Votre inscription à la newsletter TopClim.fr est confirmée." noindex>
@@ -10,6 +11,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
       vérifier vos courriers indésirables si vous ne le voyez pas arriver
       sous quelques minutes.
     </p>
-    <a href="/" class="mt-8 inline-block text-brand-700">← Retour à l'accueil</a>
+    <a href={withBase('/')} class="mt-8 inline-block text-brand-700">← Retour à l'accueil</a>
   </section>
 </BaseLayout>

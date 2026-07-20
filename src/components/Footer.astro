@@ -1,5 +1,5 @@
 ---
-import { SITE } from '../lib/site';
+import { SITE, withBase } from '../lib/site';
 const year = new Date().getFullYear();
 ---
 
@@ -13,18 +13,18 @@ const year = new Date().getFullYear();
       <div>
         <p class="font-semibold text-slate-900">Contenu</p>
         <ul class="mt-2 space-y-1">
-          <li><a href="/climatiseur-mobile/">Guide complet</a></li>
-          <li><a href="/comparatifs/meilleur-climatiseur-mobile/">Comparatif 2026</a></li>
+          <li><a href={withBase('/climatiseur-mobile/')}>Guide complet</a></li>
+          <li><a href={withBase('/comparatifs/meilleur-climatiseur-mobile/')}>Comparatif 2026</a></li>
         </ul>
       </div>
       <div>
         <p class="font-semibold text-slate-900">Informations légales</p>
         <ul class="mt-2 space-y-1">
-          <li><a href="/mentions-legales/">Mentions légales</a></li>
-          <li><a href="/politique-de-confidentialite/">Politique de confidentialité (RGPD)</a></li>
-          <li><a href="/politique-de-cookies/">Politique de cookies</a></li>
-          <li><a href="/cgu/">Conditions générales d'utilisation</a></li>
-          <li><a href="/comment-on-gagne-de-largent/">Comment on gagne de l'argent</a></li>
+          <li><a href={withBase('/mentions-legales/')}>Mentions légales</a></li>
+          <li><a href={withBase('/politique-de-confidentialite/')}>Politique de confidentialité (RGPD)</a></li>
+          <li><a href={withBase('/politique-de-cookies/')}>Politique de cookies</a></li>
+          <li><a href={withBase('/cgu/')}>Conditions générales d'utilisation</a></li>
+          <li><a href={withBase('/comment-on-gagne-de-largent/')}>Comment on gagne de l'argent</a></li>
         </ul>
       </div>
     </div>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import EmailCapture from '../components/EmailCapture.astro';
+import { withBase } from '../lib/site';
 
 interface Props {
   title: string;
@@ -20,7 +21,7 @@ const dateFormatter = new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' });
 <BaseLayout title={title} description={description}>
   <article class="mx-auto max-w-3xl px-4 py-10">
     <nav aria-label="Fil d'Ariane" class="mb-4 text-xs text-slate-500">
-      <a href="/" class="no-underline hover:underline">Accueil</a>
+      <a href={withBase('/')} class="no-underline hover:underline">Accueil</a>
       <span aria-hidden="true"> / </span>
       <span>{breadcrumbLabel}</span>
     </nav>
