@@ -35,13 +35,18 @@ const produits = defineCollection({
     z.object({
       nom: z.string(),
       marque: z.string(),
+      // Un vrai climatiseur (compresseur + gaine d'évacuation) refroidit
+      // réellement une pièce ; un rafraîchisseur évaporatif a un effet plus
+      // limité (voir le guide). On distingue les deux pour ne jamais prêter
+      // à un rafraîchisseur des specs/performances de climatiseur.
+      type: z.enum(['climatiseur', 'rafraichisseur']).default('climatiseur'),
       image: z.string(),
       imageAlt: z.string(),
-      puissanceBtu: z.number(),
+      puissanceBtu: z.number().optional(),
       surfaceConseilleeM2: z.string(),
-      niveauSonoreDb: z.number(),
+      niveauSonoreDb: z.number().optional(),
       reversible: z.boolean(),
-      classeEnergetique: z.string(),
+      classeEnergetique: z.string().optional(),
       avantages: z.array(z.string()),
       inconvenients: z.array(z.string()),
       noteRedaction: z.number().min(0).max(5),
