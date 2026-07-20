@@ -1,28 +1,33 @@
 ---
-import { MERCHANTS, type MerchantId } from '../lib/site';
+import { MERCHANTS, withBase, type MerchantId } from '../lib/site';
 
 interface Props {
   nomProduit: string;
+  produitId: string;
   liens: Partial<Record<MerchantId, string>>;
   size?: 'default' | 'small';
 }
 
-const { nomProduit, liens, size = 'default' } = Astro.props;
+const { nomProduit, produitId, liens, size = 'default' } = Astro.props;
 const entries = (Object.entries(liens) as [MerchantId, string | undefined][]).filter(
   ([, url]) => Boolean(url),
 );
 ---
 
 <!--
-  Conformité affiliation : chaque lien marchand porte rel="sponsored nofollow noopener"
-  et n'affiche jamais de prix en dur (les prix changent en dehors de notre contrôle).
-  Le prix réel n'est visible que sur le site du marchand.
+  Conformité affiliation : chaque lien marchand passe par une page de
+  redirection interne (/go/<produit>-<marchand>/) plutôt que d'exposer
+  directement l'URL d'affiliation (qui contient le tag/identifiant du
+  compte). La page de redirection elle-même porte le lien réel avec
+  rel="sponsored nofollow" et n'est jamais indexée. Aucun prix en dur ici :
+  les prix changent en dehors de notre contrôle, le prix réel n'est
+  visible que sur le site du marchand.
 -->
 <div class="flex flex-wrap gap-2" role="group" aria-label={`Acheter ${nomProduit}`}>
   {
-    entries.map(([id, url]) => (
+    entries.map(([id]) => (
       <a
-        href={url}
+        href={withBase(`/go/${produitId}-${id}/`)}
         target="_blank"
         rel="sponsored nofollow noopener"
         class:list={[

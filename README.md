@@ -20,7 +20,8 @@ npm run preview   # sert le build de dist/
 - `src/content/produits/` — fiches produit (specs + liens marchands, **jamais de prix en dur**)
 - `src/content/legal/` — mentions légales, RGPD, CGU, cookies, transparence affiliation
 - `src/components/EmailCapture.astro` — bloc de capture email, réutilisé sur les pages clés
-- `src/components/MerchantButtons.astro` — boutons Amazon / Cdiscount / ManoMano (`rel="sponsored nofollow noopener"`)
+- `src/components/MerchantButtons.astro` — boutons Amazon / Cdiscount / ManoMano, pointent vers `/go/<produit>-<marchand>/`
+- `src/pages/go/[slug].astro` — pages de redirection statiques (une par produit × marchand) qui portent l'URL d'affiliation réelle ; noindex, exclues du sitemap
 - `src/lib/site.ts` — constantes du site (nom, contact, URL du formulaire newsletter)
 
 ## À faire avant la mise en ligne
@@ -44,8 +45,12 @@ npm run preview   # sert le build de dist/
 ## Garde-fous déjà en place
 
 - Aucun prix n'est codé en dur nulle part dans le contenu ou les composants.
-- Tous les liens marchands portent `rel="sponsored nofollow noopener"` et
-  s'ouvrent dans un nouvel onglet.
+- Les liens marchands visibles pointent vers une page de redirection interne
+  (`/go/...`) plutôt que vers l'URL d'affiliation brute, pour ne pas exposer
+  le tag/identifiant du compte dans le survol des liens ou le code source des
+  pages produits. La page de redirection porte `rel="sponsored nofollow noopener"`
+  sur le lien réel et un `<meta name="robots" content="noindex, nofollow">`.
+- Tous les liens marchands s'ouvrent dans un nouvel onglet.
 - Le formulaire newsletter ne référence aucun lien Amazon.
 - Bandeau de consentement cookies (RGPD) avant tout cookie non essentiel.
 - Page dédiée "Comment on gagne de l'argent" pour la transparence sur

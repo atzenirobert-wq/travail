@@ -1,0 +1,38 @@
+---
+import { getCollection } from 'astro:content';
+import { MERCHANTS, SITE, type MerchantId } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const produits = await getCollection('produits');
+  return produits.flatMap((produit) => {
+    const merchantIds = Object.keys(produit.data.liens) as MerchantId[];
+    return merchantIds
+      .filter((merchantId) => Boolean(produit.data.liens[merchantId]))
+      .map((merchantId) => ({
+        params: { slug: `${produit.id}-${merchantId}` },
+        props: {
+          destination: produit.data.liens[merchantId]!,
+          label: `${produit.data.marque} ${produit.data.nom} — ${MERCHANTS[merchantId].label}`,
+        },
+      }));
+  });
+}
+
+const { destination, label } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirection vers {label} | {SITE.name}</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="refresh" content={`0; url=${destination}`} />
+  </head>
+  <body>
+    <p>
+      Redirection vers <a href={destination} rel="sponsored nofollow noopener">{label}</a>…
+    </p>
+  </body>
+</html>
