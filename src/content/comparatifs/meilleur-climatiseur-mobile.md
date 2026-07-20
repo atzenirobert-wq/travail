@@ -1,36 +1,36 @@
 ---
 title: "Meilleur climatiseur mobile 2026 : notre comparatif"
-description: "Notre sélection de climatiseurs mobiles testés et comparés selon la puissance, le bruit, la consommation et le rapport qualité-prix."
+description: "Notre sélection de climatiseurs mobiles comparés selon la puissance, le bruit, la consommation et l'usage visé — pour trouver le bon modèle selon votre pièce."
 silo: "climatiseur-mobile"
 publishDate: 2026-07-20
 showEmailCapture: true
 produits:
-  - "confort-plus-9000"
-  - "airfrais-pro-12000"
-  - "silentair-2600w"
+  - "delonghi-pinguino-pac-n82-eco"
+  - "comfee-pac-12000"
+  - "whirlpool-pacf212co"
+  - "suntec-impuls-12000"
+  - "trotec-pac-3501-s"
+  - "simsky-rafraichisseur-4en1"
 ---
 
-Nous avons comparé ces climatiseurs mobiles sur quatre critères : la puissance
-frigorifique (BTU), le niveau sonore, la consommation électrique et la facilité
-d'installation. Les fiches ci-dessous résument nos constats ; les liens permettent
-de consulter la disponibilité et le prix actuel chez chaque marchand.
-
-> ⚠️ **Note pour l'éditeur du site** : les trois produits ci-dessous sont des données
-> d'exemple (noms génériques, liens marchands non fonctionnels) à remplacer par de
-> vrais modèles testés avant la mise en ligne. Voir le fichier `src/content/produits/`.
-
-## Notre sélection
-
-<!-- Le rendu détaillé des fiches produit se fait via la page comparatif elle-même
-     (voir src/pages/comparatifs/[slug].astro), pas dans ce Markdown. -->
+Ce comparatif rassemble des climatiseurs mobiles à compresseur, plus un
+rafraîchisseur d'air évaporatif présenté à part (il ne fonctionne pas sur le
+même principe, voir notre [guide complet](/climatiseur-mobile/) pour la
+différence). L'ordre ci-dessous suit une logique d'usage — d'un modèle
+polyvalent pour un usage quotidien classique jusqu'aux modèles taillés pour
+de grandes surfaces — plutôt qu'un classement strict du meilleur au moins
+bon : chaque profil de pièce a ses propres priorités.
 
 ## Comment nous avons comparé ces modèles
 
-Chaque fiche produit indique la puissance recommandée en m², le niveau sonore en
-décibels annoncé par le fabricant, la présence ou non d'une fonction réversible, et
-la classe énergétique. Nous ne fixons jamais de prix dans nos comparatifs : les prix
-évoluent en permanence chez les marchands, consultez le prix actuel directement sur
-la fiche produit du marchand via nos liens.
+Chaque fiche produit indique, quand le fabricant la communique, la puissance
+en BTU, la surface conseillée, le niveau sonore en décibels, la présence
+d'une fonction réversible et la classe énergétique. Certaines informations
+(niveau sonore, classe énergétique) ne sont pas toujours publiées par tous
+les fabricants — dans ce cas, nous l'indiquons plutôt que d'inventer un
+chiffre. Nous ne fixons jamais de prix dans nos comparatifs : les prix
+évoluent en permanence chez les marchands, consultez le prix actuel
+directement sur la fiche produit via nos liens.
 
-Pour comprendre comment choisir la puissance adaptée à votre pièce, consultez notre
-[guide complet du climatiseur mobile](/climatiseur-mobile/).
+Pour comprendre comment choisir la puissance adaptée à votre pièce, consultez
+notre [guide complet du climatiseur mobile](/climatiseur-mobile/).
