@@ -1,0 +1,12 @@
+---
+import { getEntry, render } from 'astro:content';
+import LegalLayout from '../layouts/LegalLayout.astro';
+
+const entry = await getEntry('legal', 'politique-de-confidentialite');
+if (!entry) throw new Error('Missing legal entry: politique-de-confidentialite');
+const { Content } = await render(entry);
+---
+
+<LegalLayout title={entry.data.title} updatedDate={entry.data.updatedDate}>
+  <Content />
+</LegalLayout>

@@ -1,0 +1,44 @@
+---
+import { MERCHANTS, type MerchantId } from '../lib/site';
+
+interface Props {
+  nomProduit: string;
+  liens: Partial<Record<MerchantId, string>>;
+  size?: 'default' | 'small';
+}
+
+const { nomProduit, liens, size = 'default' } = Astro.props;
+const entries = (Object.entries(liens) as [MerchantId, string | undefined][]).filter(
+  ([, url]) => Boolean(url),
+);
+---
+
+<!--
+  Conformité affiliation : chaque lien marchand porte rel="sponsored nofollow noopener"
+  et n'affiche jamais de prix en dur (les prix changent en dehors de notre contrôle).
+  Le prix réel n'est visible que sur le site du marchand.
+-->
+<div class="flex flex-wrap gap-2" role="group" aria-label={`Acheter ${nomProduit}`}>
+  {
+    entries.map(([id, url]) => (
+      <a
+        href={url}
+        target="_blank"
+        rel="sponsored nofollow noopener"
+        class:list={[
+          'inline-flex items-center justify-center rounded-lg font-semibold no-underline transition-colors',
+          MERCHANTS[id].className,
+          size === 'small' ? 'px-3 py-1.5 text-xs' : 'px-4 py-2.5 text-sm',
+        ]}
+      >
+        {MERCHANTS[id].label}
+        <span class="sr-only"> (nouvel onglet, lien sponsorisé)</span>
+      </a>
+    ))
+  }
+</div>
+{
+  entries.length === 0 && (
+    <p class="text-xs text-slate-500">Aucun marchand disponible pour le moment.</p>
+  )
+}

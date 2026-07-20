@@ -1,0 +1,38 @@
+---
+import { SITE } from '../lib/site';
+const year = new Date().getFullYear();
+---
+
+<footer class="mt-16 border-t border-slate-200 bg-slate-50">
+  <div class="mx-auto max-w-6xl px-4 py-10 text-sm text-slate-600">
+    <div class="grid gap-8 sm:grid-cols-3">
+      <div>
+        <p class="text-base font-bold text-slate-900">{SITE.name}</p>
+        <p class="mt-2">{SITE.tagline}</p>
+      </div>
+      <div>
+        <p class="font-semibold text-slate-900">Contenu</p>
+        <ul class="mt-2 space-y-1">
+          <li><a href="/climatiseur-mobile/">Guide complet</a></li>
+          <li><a href="/comparatifs/meilleur-climatiseur-mobile/">Comparatif 2026</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-semibold text-slate-900">Informations légales</p>
+        <ul class="mt-2 space-y-1">
+          <li><a href="/mentions-legales/">Mentions légales</a></li>
+          <li><a href="/politique-de-confidentialite/">Politique de confidentialité (RGPD)</a></li>
+          <li><a href="/politique-de-cookies/">Politique de cookies</a></li>
+          <li><a href="/cgu/">Conditions générales d'utilisation</a></li>
+          <li><a href="/comment-on-gagne-de-largent/">Comment on gagne de l'argent</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="mt-8 border-t border-slate-200 pt-6 text-xs text-slate-500">
+      © {year} {SITE.name}. {SITE.name} participe à des programmes d'affiliation (Amazon,
+      Cdiscount, ManoMano) et perçoit une commission sur les achats réalisés via certains
+      liens de ce site, sans surcoût pour vous. Voir notre page « Comment on gagne de
+      l'argent » pour plus de détails.
+    </p>
+  </div>
+</footer>

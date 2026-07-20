@@ -1,0 +1,38 @@
+---
+import { getCollection, getEntries, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+
+export async function getStaticPaths() {
+  const comparatifs = await getCollection('comparatifs');
+  return comparatifs.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const produits = entry.data.produits.length ? await getEntries(entry.data.produits) : [];
+---
+
+<ArticleLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  publishDate={entry.data.publishDate}
+  updatedDate={entry.data.updatedDate}
+  breadcrumbLabel={entry.data.title}
+  showEmailCapture={entry.data.showEmailCapture}
+>
+  <Content />
+
+  {
+    produits.length > 0 && (
+      <div class="mt-8 flex flex-col gap-6">
+        {produits.map((produit, i) => (
+          <ProductCard produit={produit} rank={i + 1} />
+        ))}
+      </div>
+    )
+  }
+</ArticleLayout>

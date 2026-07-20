@@ -1,0 +1,12 @@
+---
+import { getEntry, render } from 'astro:content';
+import LegalLayout from '../layouts/LegalLayout.astro';
+
+const entry = await getEntry('legal', 'comment-on-gagne-de-largent');
+if (!entry) throw new Error('Missing legal entry: comment-on-gagne-de-largent');
+const { Content } = await render(entry);
+---
+
+<LegalLayout title={entry.data.title} updatedDate={entry.data.updatedDate}>
+  <Content />
+</LegalLayout>

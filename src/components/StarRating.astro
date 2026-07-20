@@ -1,0 +1,14 @@
+---
+interface Props {
+  note: number;
+}
+const { note } = Astro.props;
+const rounded = Math.round(note * 2) / 2;
+---
+
+<span class="inline-flex items-center gap-1" aria-label={`Note de la rédaction : ${rounded} sur 5`}>
+  <span class="text-amber-500" aria-hidden="true">
+    {'★'.repeat(Math.floor(rounded))}{rounded % 1 !== 0 ? '½' : ''}
+  </span>
+  <span class="text-sm font-semibold text-slate-700">{rounded}/5</span>
+</span>

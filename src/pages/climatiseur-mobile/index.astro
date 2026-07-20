@@ -1,0 +1,19 @@
+---
+import { getEntry, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+const entry = await getEntry('guides', 'climatiseur-mobile');
+if (!entry) throw new Error('Missing guide entry: climatiseur-mobile');
+const { Content } = await render(entry);
+---
+
+<ArticleLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  publishDate={entry.data.publishDate}
+  updatedDate={entry.data.updatedDate}
+  breadcrumbLabel="Climatiseur mobile"
+  showEmailCapture={entry.data.showEmailCapture}
+>
+  <Content />
+</ArticleLayout>

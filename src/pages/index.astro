@@ -1,0 +1,48 @@
+---
+import { getCollection, getEntries } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import EmailCapture from '../components/EmailCapture.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { SITE } from '../lib/site';
+
+const comparatif = (await getCollection('comparatifs')).find(
+  (c) => c.id === 'meilleur-climatiseur-mobile',
+);
+const produits = comparatif ? await getEntries(comparatif.data.produits.slice(0, 2)) : [];
+---
+
+<BaseLayout title={SITE.name} description={SITE.description}>
+  <section class="mx-auto max-w-4xl px-4 py-14 text-center sm:py-20">
+    <h1 class="text-4xl sm:text-5xl">{SITE.tagline}</h1>
+    <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+      Puissance, bruit, consommation : on compare les climatiseurs mobiles sans
+      parti pris pour vous aider à choisir le bon modèle, sans jamais afficher de
+      prix figé — consultez toujours le prix actuel chez le marchand.
+    </p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a
+        href="/climatiseur-mobile/"
+        class="rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white no-underline hover:bg-brand-700"
+      >
+        Lire le guide complet
+      </a>
+      <a
+        href="/comparatifs/meilleur-climatiseur-mobile/"
+        class="rounded-full border border-brand-600 px-6 py-3 text-sm font-semibold text-brand-700 no-underline hover:bg-brand-50"
+      >
+        Voir le comparatif
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-4xl px-4">
+    <h2 class="text-2xl">Nos favoris du moment</h2>
+    <div class="mt-6 flex flex-col gap-6">
+      {produits.map((produit, i) => <ProductCard produit={produit} rank={i + 1} />)}
+    </div>
+  </section>
+
+  <div class="mx-auto max-w-4xl px-4">
+    <EmailCapture />
+  </div>
+</BaseLayout>
