@@ -2,16 +2,22 @@
 nom: "PAC 12000"
 marque: "Comfee"
 type: "climatiseur"
-# TODO: remplacer par de vraies photos du produit
 images:
-  - src: "/images/produits/placeholder-clim.svg"
-    alt: "Climatiseur mobile Comfee PAC 12000"
+  - src: "/images/produits/comfee-pac-12000.jpeg"
+    alt: "Climatiseur mobile Comfee PAC 12000, vue de face"
+  - src: "/images/produits/comfee-pac-12000-angle.jpeg"
+    alt: "Climatiseur mobile Comfee PAC 12000, vue de trois quarts"
+  - src: "/images/produits/comfee-pac-12000-modes.jpeg"
+    alt: "Modes du Comfee PAC 12000 : intelligent, refroidissement, ventilateur 3 vitesses, déshumidification"
+  - src: "/images/produits/comfee-pac-12000-dimensions.jpeg"
+    alt: "Dimensions du Comfee PAC 12000 : 765 x 467 x 397 mm"
 puissanceBtu: 12000
 surfaceConseilleeM2: "41 m²"
 reversible: false
 avantages:
   - "3,5 kW / 12 000 BTU : la version la plus puissante réellement disponible dans la gamme Comfee"
-  - "Fonctions 3-en-1 : climatisation, ventilation, déshumidification"
+  - "Fonctions 3-en-1 : climatisation, ventilation 3 vitesses, déshumidification"
+  - "Minuterie 24h et mode veille pour un usage nocturne"
   - "Gamme bien identifiée par les utilisateurs de produits Comfee plus petits"
 inconvenients:
   - "Froid seulement, pas de fonction chauffage"
