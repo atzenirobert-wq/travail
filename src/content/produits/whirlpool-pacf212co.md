@@ -2,10 +2,15 @@
 nom: "PACF212CO W"
 marque: "Whirlpool"
 type: "climatiseur"
-# TODO: remplacer par de vraies photos du produit
 images:
-  - src: "/images/produits/placeholder-clim.svg"
-    alt: "Climatiseur mobile Whirlpool PACF212CO W"
+  - src: "/images/produits/whirlpool-pacf212co.jpeg"
+    alt: "Climatiseur mobile Whirlpool PACF212CO W, vue de face"
+  - src: "/images/produits/whirlpool-pacf212co-angle.jpeg"
+    alt: "Climatiseur mobile Whirlpool PACF212CO W, vue de trois quarts"
+  - src: "/images/produits/whirlpool-pacf212co-arriere.jpeg"
+    alt: "Climatiseur mobile Whirlpool PACF212CO W, vue arrière avec gaine d'évacuation"
+  - src: "/images/produits/whirlpool-pacf212co-ambiance.jpeg"
+    alt: "Climatiseur mobile Whirlpool PACF212CO W installé près d'une baie vitrée, gaine sortie"
 puissanceBtu: 12000
 surfaceConseilleeM2: "35-40 m²"
 niveauSonoreDb: 61
