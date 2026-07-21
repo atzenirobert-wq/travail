@@ -11,25 +11,42 @@ interface Props {
 
 const { produit, rank } = Astro.props;
 const p = produit.data;
+const gallery = p.images.map((img) => ({ src: withBase(img.src), alt: img.alt }));
+const cover = gallery[0];
 ---
 
 <article class="flex flex-col gap-4 rounded-2xl border border-slate-200 p-5 shadow-sm sm:flex-row">
   <div class="relative shrink-0 self-center">
     {
       rank && (
-        <span class="absolute -left-2 -top-2 flex h-7 w-7 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
+        <span class="absolute -left-2 -top-2 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-brand-600 text-xs font-bold text-white">
           {rank}
         </span>
       )
     }
-    <img
-      src={withBase(p.image)}
-      alt={p.imageAlt}
-      loading="lazy"
-      width="160"
-      height="160"
-      class="h-32 w-32 rounded-xl object-contain"
-    />
+    <button
+      type="button"
+      class="group relative block cursor-zoom-in rounded-xl"
+      data-gallery={JSON.stringify(gallery)}
+      data-gallery-index="0"
+      aria-label={`Voir les photos de ${p.marque} ${p.nom}`}
+    >
+      <img
+        src={cover.src}
+        alt={cover.alt}
+        loading="lazy"
+        width="160"
+        height="160"
+        class="h-32 w-32 rounded-xl object-contain transition group-hover:opacity-80"
+      />
+      {
+        gallery.length > 1 && (
+          <span class="absolute bottom-1 right-1 rounded-full bg-black/60 px-1.5 py-0.5 text-[10px] font-semibold text-white">
+            +{gallery.length - 1}
+          </span>
+        )
+      }
+    </button>
   </div>
   <div class="flex-1">
     <div class="flex flex-wrap items-center justify-between gap-2">

@@ -1,0 +1,109 @@
+---
+---
+
+<div
+  id="lightbox"
+  class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/80 p-4"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Galerie photo"
+>
+  <button
+    type="button"
+    id="lightbox-close"
+    aria-label="Fermer la galerie"
+    class="absolute right-4 top-4 text-3xl leading-none text-white hover:text-slate-300"
+  >
+    &times;
+  </button>
+  <button
+    type="button"
+    id="lightbox-prev"
+    aria-label="Photo précédente"
+    class="absolute left-2 text-4xl leading-none text-white hover:text-slate-300 sm:left-4"
+  >
+    &lsaquo;
+  </button>
+  <figure class="max-h-full max-w-3xl">
+    <img id="lightbox-img" src="" alt="" class="mx-auto max-h-[80vh] w-auto rounded-lg object-contain" />
+    <figcaption id="lightbox-caption" class="mt-2 text-center text-sm text-white/80"></figcaption>
+  </figure>
+  <button
+    type="button"
+    id="lightbox-next"
+    aria-label="Photo suivante"
+    class="absolute right-2 text-4xl leading-none text-white hover:text-slate-300 sm:right-4"
+  >
+    &rsaquo;
+  </button>
+</div>
+
+<script>
+  type GalleryImage = { src: string; alt: string };
+
+  let images: GalleryImage[] = [];
+  let index = 0;
+
+  const overlay = document.getElementById('lightbox') as HTMLElement;
+  const imgEl = document.getElementById('lightbox-img') as HTMLImageElement;
+  const captionEl = document.getElementById('lightbox-caption') as HTMLElement;
+  const prevBtn = document.getElementById('lightbox-prev') as HTMLElement;
+  const nextBtn = document.getElementById('lightbox-next') as HTMLElement;
+
+  function render() {
+    const current = images[index];
+    imgEl.src = current.src;
+    imgEl.alt = current.alt;
+    captionEl.textContent =
+      images.length > 1 ? `${current.alt} (${index + 1}/${images.length})` : current.alt;
+    const multi = images.length > 1;
+    prevBtn.style.display = multi ? '' : 'none';
+    nextBtn.style.display = multi ? '' : 'none';
+  }
+
+  function open(gallery: GalleryImage[], startIndex: number) {
+    images = gallery;
+    index = startIndex;
+    render();
+    overlay.classList.remove('hidden');
+    overlay.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function close() {
+    overlay.classList.add('hidden');
+    overlay.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  function next() {
+    index = (index + 1) % images.length;
+    render();
+  }
+
+  function prev() {
+    index = (index - 1 + images.length) % images.length;
+    render();
+  }
+
+  document.getElementById('lightbox-close')?.addEventListener('click', close);
+  nextBtn.addEventListener('click', next);
+  prevBtn.addEventListener('click', prev);
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) close();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (overlay.classList.contains('hidden')) return;
+    if (e.key === 'Escape') close();
+    if (e.key === 'ArrowRight') next();
+    if (e.key === 'ArrowLeft') prev();
+  });
+
+  document.addEventListener('click', (e) => {
+    const trigger = (e.target as HTMLElement)?.closest<HTMLElement>('[data-gallery]');
+    if (!trigger) return;
+    const gallery = JSON.parse(trigger.dataset.gallery ?? '[]') as GalleryImage[];
+    const startIndex = Number(trigger.dataset.galleryIndex ?? '0');
+    if (gallery.length > 0) open(gallery, startIndex);
+  });
+</script>

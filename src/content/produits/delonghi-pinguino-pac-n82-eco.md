@@ -2,8 +2,13 @@
 nom: "Pinguino PAC N82 ECO"
 marque: "De'Longhi"
 type: "climatiseur"
-image: "/images/produits/delonghi-pinguino-pac-n82-eco.jpeg"
-imageAlt: "Climatiseur mobile De'Longhi Pinguino PAC N82 ECO"
+images:
+  - src: "/images/produits/delonghi-pinguino-pac-n82-eco.jpeg"
+    alt: "Climatiseur mobile De'Longhi Pinguino PAC N82 ECO, vue de face"
+  - src: "/images/produits/delonghi-pinguino-pac-n82-eco-ambiance.jpeg"
+    alt: "Climatiseur mobile De'Longhi Pinguino PAC N82 ECO installé dans un salon"
+  - src: "/images/produits/delonghi-pinguino-pac-n82-eco-dimensions.jpeg"
+    alt: "Dimensions du climatiseur mobile De'Longhi Pinguino PAC N82 ECO : 29,5 x 17,7 x 15,6 cm"
 puissanceBtu: 9400
 surfaceConseilleeM2: "32 m² (80 m³ sous 2,50 m de plafond)"
 reversible: false

@@ -2,9 +2,10 @@
 nom: "PAC 12000"
 marque: "Comfee"
 type: "climatiseur"
-# TODO: remplacer par une vraie photo du produit
-image: "/images/produits/placeholder-clim.svg"
-imageAlt: "Climatiseur mobile Comfee PAC 12000"
+# TODO: remplacer par de vraies photos du produit
+images:
+  - src: "/images/produits/placeholder-clim.svg"
+    alt: "Climatiseur mobile Comfee PAC 12000"
 puissanceBtu: 12000
 surfaceConseilleeM2: "41 m²"
 reversible: false

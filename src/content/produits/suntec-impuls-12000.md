@@ -2,9 +2,10 @@
 nom: "Impuls 3.5 Eco R290"
 marque: "Suntec"
 type: "climatiseur"
-# TODO: remplacer par une vraie photo du produit
-image: "/images/produits/placeholder-clim.svg"
-imageAlt: "Climatiseur mobile Suntec Impuls 3.5 Eco R290"
+# TODO: remplacer par de vraies photos du produit
+images:
+  - src: "/images/produits/placeholder-clim.svg"
+    alt: "Climatiseur mobile Suntec Impuls 3.5 Eco R290"
 puissanceBtu: 12000
 surfaceConseilleeM2: "60 m²"
 reversible: false

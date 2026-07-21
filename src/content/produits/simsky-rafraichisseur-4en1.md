@@ -2,9 +2,10 @@
 nom: "Rafraîchisseur d'air 4-en-1"
 marque: "Simsky"
 type: "rafraichisseur"
-# TODO: remplacer par une vraie photo du produit (image non récupérable automatiquement depuis Amazon)
-image: "/images/produits/placeholder-clim.svg"
-imageAlt: "Rafraîchisseur d'air mobile Simsky 4-en-1"
+# TODO: remplacer par de vraies photos du produit (image non récupérable automatiquement depuis Amazon)
+images:
+  - src: "/images/produits/placeholder-clim.svg"
+    alt: "Rafraîchisseur d'air mobile Simsky 4-en-1"
 surfaceConseilleeM2: "15 m²"
 reversible: false
 avantages:

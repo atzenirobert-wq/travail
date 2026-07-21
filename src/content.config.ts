@@ -40,8 +40,16 @@ const produits = defineCollection({
       // limité (voir le guide). On distingue les deux pour ne jamais prêter
       // à un rafraîchisseur des specs/performances de climatiseur.
       type: z.enum(['climatiseur', 'rafraichisseur']).default('climatiseur'),
-      image: z.string(),
-      imageAlt: z.string(),
+      // La première image sert de vignette ; toutes s'affichent dans la
+      // visionneuse (galerie) ouverte au clic sur la fiche produit.
+      images: z
+        .array(
+          z.object({
+            src: z.string(),
+            alt: z.string(),
+          }),
+        )
+        .min(1),
       puissanceBtu: z.number().optional(),
       surfaceConseilleeM2: z.string(),
       niveauSonoreDb: z.number().optional(),

@@ -2,9 +2,10 @@
 nom: "PAC 3501 S"
 marque: "Trotec"
 type: "climatiseur"
-# TODO: remplacer par une vraie photo du produit
-image: "/images/produits/placeholder-clim.svg"
-imageAlt: "Climatiseur mobile Trotec PAC 3501 S"
+# TODO: remplacer par de vraies photos du produit
+images:
+  - src: "/images/produits/placeholder-clim.svg"
+    alt: "Climatiseur mobile Trotec PAC 3501 S"
 puissanceBtu: 12000
 surfaceConseilleeM2: "46 m²"
 reversible: false

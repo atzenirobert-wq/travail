@@ -2,9 +2,10 @@
 nom: "PACF212CO W"
 marque: "Whirlpool"
 type: "climatiseur"
-# TODO: remplacer par une vraie photo du produit
-image: "/images/produits/placeholder-clim.svg"
-imageAlt: "Climatiseur mobile Whirlpool PACF212CO W"
+# TODO: remplacer par de vraies photos du produit
+images:
+  - src: "/images/produits/placeholder-clim.svg"
+    alt: "Climatiseur mobile Whirlpool PACF212CO W"
 puissanceBtu: 12000
 surfaceConseilleeM2: "35-40 m²"
 niveauSonoreDb: 61
