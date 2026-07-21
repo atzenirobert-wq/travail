@@ -2,10 +2,13 @@
 nom: "Rafraîchisseur d'air 4-en-1"
 marque: "Simsky"
 type: "rafraichisseur"
-# TODO: remplacer par de vraies photos du produit (image non récupérable automatiquement depuis Amazon)
 images:
-  - src: "/images/produits/placeholder-clim.svg"
-    alt: "Rafraîchisseur d'air mobile Simsky 4-en-1"
+  - src: "/images/produits/simsky-rafraichisseur-4en1.jpeg"
+    alt: "Rafraîchisseur d'air mobile Simsky 4-en-1, avec blocs de glace et télécommande"
+  - src: "/images/produits/simsky-rafraichisseur-4en1-modes.jpeg"
+    alt: "Les 3 modes du rafraîchisseur Simsky : ventilation, humidification, rafraîchissement (58 cm de hauteur)"
+  - src: "/images/produits/simsky-rafraichisseur-4en1-reservoir.jpeg"
+    alt: "Réservoir 12L du rafraîchisseur Simsky avec blocs de glace"
 surfaceConseilleeM2: "15 m²"
 reversible: false
 avantages:
