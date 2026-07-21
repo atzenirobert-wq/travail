@@ -2,8 +2,7 @@
 nom: "Pinguino PAC N82 ECO"
 marque: "De'Longhi"
 type: "climatiseur"
-# TODO: remplacer par une vraie photo du produit
-image: "/images/produits/placeholder-clim.svg"
+image: "/images/produits/delonghi-pinguino-pac-n82-eco.jpeg"
 imageAlt: "Climatiseur mobile De'Longhi Pinguino PAC N82 ECO"
 puissanceBtu: 9400
 surfaceConseilleeM2: "32 m² (80 m³ sous 2,50 m de plafond)"
