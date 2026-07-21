@@ -2,17 +2,23 @@
 nom: "PAC 3501 S"
 marque: "Trotec"
 type: "climatiseur"
-# TODO: remplacer par de vraies photos du produit
 images:
-  - src: "/images/produits/placeholder-clim.svg"
-    alt: "Climatiseur mobile Trotec PAC 3501 S"
+  - src: "/images/produits/trotec-pac-3501-s.jpeg"
+    alt: "Climatiseur mobile Trotec PAC 3501 S, avec télécommande et application de pilotage"
+  - src: "/images/produits/trotec-pac-3501-s-ambiance.jpeg"
+    alt: "Climatiseur mobile Trotec PAC 3501 S installé dans une chambre"
+  - src: "/images/produits/trotec-pac-3501-s-dimensions.jpeg"
+    alt: "Dimensions du Trotec PAC 3501 S : 715 x 410 x 335 mm, câble 1800 mm"
+  - src: "/images/produits/trotec-pac-3501-s-filtre.jpeg"
+    alt: "Filtre amovible et lavable du Trotec PAC 3501 S"
 puissanceBtu: 12000
 surfaceConseilleeM2: "46 m²"
 reversible: false
 avantages:
   - "Marque allemande réputée pour sa robustesse"
   - "Puissance frigorifique de 3,5 kW, adaptée aux grands espaces (jusqu'à ~46 m²)"
-  - "WiFi intégré pour un pilotage à distance"
+  - "WiFi intégré avec application de pilotage à distance (mode, température, minuterie)"
+  - "Filtre amovible et lavable, facilement accessible pour l'entretien"
   - "Plusieurs vitesses de ventilation, fonction déshumidification"
 inconvenients:
   - "Froid seulement, pas de fonction chauffage"
