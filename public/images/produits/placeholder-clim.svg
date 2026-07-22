@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="16" fill="#eff9ff"/>
+  <rect x="40" y="60" width="120" height="90" rx="10" fill="#ffffff" stroke="#0e8fd4" stroke-width="4"/>
+  <rect x="55" y="80" width="90" height="10" rx="4" fill="#dcf1ff"/>
+  <rect x="55" y="98" width="60" height="10" rx="4" fill="#dcf1ff"/>
+  <circle cx="130" cy="103" r="10" fill="#0e8fd4"/>
+  <text x="100" y="180" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#0a5a86">
+    Image à remplacer
+  </text>
+</svg>

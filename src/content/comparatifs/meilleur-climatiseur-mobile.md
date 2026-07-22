@@ -5,11 +5,16 @@ silo: "climatiseur-mobile"
 publishDate: 2026-07-20
 showEmailCapture: true
 produits:
+  - "delonghi-pinguino-compact-es72"
+  - "delonghi-pinguino-pac-ex105"
   - "delonghi-pinguino-pac-n82-eco"
+  - "cecotec-forceclima-12600-soundless"
   - "comfee-pac-12000"
+  - "dreo-ac515s"
   - "whirlpool-pacf212co"
   - "suntec-impuls-12000"
   - "trotec-pac-3501-s"
+  - "olimpia-splendid-dolceclima-air-pro-14"
   - "simsky-rafraichisseur-4en1"
 ---
 
