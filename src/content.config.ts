@@ -51,6 +51,15 @@ const produits = defineCollection({
         )
         .min(1),
       puissanceBtu: z.number().optional(),
+      // Fourchette de prix indicative en euros, jamais un prix exact figé :
+      // sur un site statique, un prix exact devient faux dès qu'il change
+      // chez le marchand. Sert aussi de base au futur curseur de budget.
+      prixApproxEur: z
+        .object({
+          min: z.number(),
+          max: z.number(),
+        })
+        .optional(),
       surfaceConseilleeM2: z.string(),
       niveauSonoreDb: z.number().optional(),
       reversible: z.boolean(),

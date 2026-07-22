@@ -15,7 +15,11 @@ const gallery = p.images.map((img) => ({ src: withBase(img.src), alt: img.alt })
 const cover = gallery[0];
 ---
 
-<article class="flex flex-col gap-4 rounded-2xl border border-slate-200 p-5 shadow-sm sm:flex-row">
+<article
+  class="flex flex-col gap-4 rounded-2xl border border-slate-200 p-5 shadow-sm sm:flex-row"
+  data-price-min={p.prixApproxEur?.min}
+  data-price-max={p.prixApproxEur?.max}
+>
   <div class="relative shrink-0 self-center">
     {
       rank && (
@@ -58,6 +62,16 @@ const cover = gallery[0];
         <span class="mt-1 inline-block rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-800">
           Rafraîchisseur évaporatif (pas un climatiseur à compresseur)
         </span>
+      )
+    }
+    {
+      p.prixApproxEur && (
+        <p class="mt-1 text-sm">
+          <span class="font-semibold text-slate-900">
+            {p.prixApproxEur.min}–{p.prixApproxEur.max} €
+          </span>
+          <span class="text-xs text-slate-500"> environ, voir le prix exact chez le marchand</span>
+        </p>
       )
     }
     <ul class="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-600">
