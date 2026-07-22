@@ -12,6 +12,9 @@ images:
   - src: "/images/produits/trotec-pac-3501-s-filtre.jpeg"
     alt: "Filtre amovible et lavable du Trotec PAC 3501 S"
 puissanceBtu: 12000
+prixApproxEur:
+  min: 450
+  max: 550
 surfaceConseilleeM2: "46 m²"
 reversible: false
 avantages:

@@ -9,6 +9,9 @@ images:
     alt: "Les 3 modes du rafraîchisseur Simsky : ventilation, humidification, rafraîchissement (58 cm de hauteur)"
   - src: "/images/produits/simsky-rafraichisseur-4en1-reservoir.jpeg"
     alt: "Réservoir 12L du rafraîchisseur Simsky avec blocs de glace"
+prixApproxEur:
+  min: 40
+  max: 80
 surfaceConseilleeM2: "15 m²"
 reversible: false
 avantages:

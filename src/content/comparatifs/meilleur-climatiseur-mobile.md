@@ -28,8 +28,8 @@ en BTU, la surface conseillée, le niveau sonore en décibels, la présence
 d'une fonction réversible et la classe énergétique. Certaines informations
 (niveau sonore, classe énergétique) ne sont pas toujours publiées par tous
 les fabricants — dans ce cas, nous l'indiquons plutôt que d'inventer un
-chiffre. Nous ne fixons jamais de prix dans nos comparatifs : les prix
-évoluent en permanence chez les marchands, consultez le prix actuel
+chiffre. La fourchette de prix affichée est **indicative** : les prix
+évoluent en permanence chez les marchands, consultez le prix exact et à jour
 directement sur la fiche produit via nos liens.
 
 Pour comprendre comment choisir la puissance adaptée à votre pièce, consultez

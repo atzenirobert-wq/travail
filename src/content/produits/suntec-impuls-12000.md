@@ -10,6 +10,9 @@ images:
   - src: "/images/produits/suntec-impuls-12000-taille.jpeg"
     alt: "Climatiseur mobile Suntec Impuls 3.5 Eco R290 : 74 cm de hauteur, comparé à une silhouette humaine"
 puissanceBtu: 12000
+prixApproxEur:
+  min: 340
+  max: 470
 surfaceConseilleeM2: "60 m²"
 reversible: false
 avantages:

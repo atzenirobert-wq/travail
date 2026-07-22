@@ -12,6 +12,9 @@ images:
   - src: "/images/produits/whirlpool-pacf212co-ambiance.jpeg"
     alt: "Climatiseur mobile Whirlpool PACF212CO W installé près d'une baie vitrée, gaine sortie"
 puissanceBtu: 12000
+prixApproxEur:
+  min: 450
+  max: 600
 surfaceConseilleeM2: "35-40 m²"
 niveauSonoreDb: 61
 reversible: false

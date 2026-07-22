@@ -12,6 +12,9 @@ images:
   - src: "/images/produits/comfee-pac-12000-dimensions.jpeg"
     alt: "Dimensions du Comfee PAC 12000 : 765 x 467 x 397 mm"
 puissanceBtu: 12000
+prixApproxEur:
+  min: 300
+  max: 420
 surfaceConseilleeM2: "41 m²"
 reversible: false
 avantages:
